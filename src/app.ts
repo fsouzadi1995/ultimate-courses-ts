@@ -82,3 +82,13 @@ let pizza: { name: string; price: number; getName(): string } = {
 
 /* Invalid because pizza is reassigned but doesn't implement the getName() method  */
 // pizza = { name: 'Anchovies', price: 15 };
+
+/**
+ * Tuple types for arrays
+ */
+
+let nicePizza: [string, number, boolean];
+
+nicePizza = ['Pepperoni', 2, true];
+// nicePizza = [true, 'Pepperoni', 2]; => Invalid because doesn't respect the order inside the tuple type
+// nicePizza = ['Pepperoni', 2]; => Invalid because doesn't respect the amount of elements inside the tuple
