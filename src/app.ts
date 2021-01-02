@@ -60,9 +60,25 @@ selectSize('small');
  */
 
 let sumOrder: Function;
-sumOrder = (price: number, qty: number): number => price * qty; // Valid
+sumOrder = (price: number, qty: number = 1): number => price * qty; // Valid
 
 let sumOrderTwo: (price: number, qty: number) => number;
 sumOrderTwo = (x, y) => x * y; // Also valid
 
 let sumOrderThree: (price: number, qty: number) => number = (x, y) => x * y; // Also valid
+
+/**
+ * Object types
+ */
+
+// Object type has to match properties and methods on assignment
+let pizza: { name: string; price: number; getName(): string } = {
+  name: 'Pepperoni',
+  price: 15,
+  getName() {
+    return pizza.name;
+  },
+}; // Valid
+
+/* Invalid because pizza is reassigned but doesn't implement the getName() method  */
+// pizza = { name: 'Anchovies', price: 15 };
