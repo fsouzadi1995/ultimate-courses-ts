@@ -1,12 +1,24 @@
 console.log('Greetings 🧙');
 console.log('Spell!');
 
-const body = document.querySelector('body');
-const div = document.createElement('div');
+/**
+ *  Implicit vs Explicit types
+ */
 
-div.innerHTML = 'peepee';
-div.style.fontFamily = 'Roboto mono, sans-serif';
-div.style.display = 'flex';
-div.style.justifyContent = 'center';
+let something; /* Since something is declared without a type nor a value it has a
+                  inferred type of Any */
 
-body?.appendChild(div);
+something = true;
+
+something = 15;
+
+something = 'I am something';
+
+let implicitTyping = 'pizza'; // implicitTyping now has implicited that it's a string
+let explicitTyping: string = 'pizzaDiscount'; // explicitTyping has been declared of type string
+
+let alsoExplicit: string; // alsoExplicit is also of explicit type string although unassigned
+
+/**
+ *
+ */
