@@ -1,1 +1,2 @@
-console.log('Hello TypeScript!');
+console.log('Greetings 🧙');
+console.log('Spell!');
