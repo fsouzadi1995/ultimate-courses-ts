@@ -37,7 +37,20 @@ let coupon: string | null = 'pizza25';
 
 // Impure function
 function removeCoupon() {
-  // coupon = null; => this is invalid due to the fact that coupon cannot be of type null
-  // coupon = undefined; => also invalid due to the fact that coupon cannot be of type undefined
+  // coupon = null; => this is illegal due to the fact that coupon cannot be of type null
+  // coupon = undefined; => also illegal due to the fact that coupon cannot be of type undefined
   coupon = null;
 }
+
+/**
+ * Union and literal types
+ */
+
+let pizzaSize: string = 'small';
+
+function selectSize(size: 'small' | 'medium' | 'large'): void {
+  pizzaSize = size;
+}
+
+// selectSize('larger'); => illegal because function selectSize() size param cannot take the value 'larger'
+selectSize('small');
