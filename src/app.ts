@@ -54,3 +54,15 @@ function selectSize(size: 'small' | 'medium' | 'large'): void {
 
 // selectSize('larger'); => illegal because function selectSize() size param cannot take the value 'larger'
 selectSize('small');
+
+/**
+ * Function types
+ */
+
+let sumOrder: Function;
+sumOrder = (price: number, qty: number): number => price * qty; // Valid
+
+let sumOrderTwo: (price: number, qty: number) => number;
+sumOrderTwo = (x, y) => x * y; // Also valid
+
+let sumOrderThree: (price: number, qty: number) => number = (x, y) => x * y; // Also valid
