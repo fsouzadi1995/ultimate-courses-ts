@@ -1,23 +1,3 @@
-console.log('Greetings 🧙');
-console.log('Spell!');
-
-/**
- *  Implicit vs Explicit types
- */
-
-let something; // no type supplied nor value assigned means something is inferred of type any
-
-something = true; // valid because of type any
-
-something = 15; // valid because of type any
-
-something = 'I am something'; // valid because of type any
-
-let implicitTyping = 'pizza'; // implicitTyping now has implicited that it's a string
-let explicitTyping: string = 'pizzaDiscount'; // explicitTyping has been declared of type string
-
-let alsoExplicit: string; // alsoExplicit is also of explicit type string although unassigned
-
 /**
  * Never type
  */
@@ -34,13 +14,6 @@ function throwError(err: string): never {
 
 // let coupon: string = 'pizza25'; => this coupon cannot be assigned null
 let coupon: string | null = 'pizza25';
-
-// Impure function
-function removeCoupon() {
-  // coupon = null; => this is illegal due to the fact that coupon cannot be of type null
-  // coupon = undefined; => also illegal due to the fact that coupon cannot be of type undefined
-  coupon = null;
-}
 
 /**
  * Union and literal types
@@ -90,5 +63,5 @@ let pizza: { name: string; price: number; getName(): string } = {
 let nicePizza: [string, number, boolean];
 
 nicePizza = ['Pepperoni', 2, true];
-// nicePizza = [true, 'Pepperoni', 2]; => Invalid because doesn't respect the order inside the tuple type
+// nicePizza = [true, 'Pepperoni', 2]; => Invalid because doesn't respect the order of the tuple type
 // nicePizza = ['Pepperoni', 2]; => Invalid because doesn't respect the amount of elements inside the tuple
